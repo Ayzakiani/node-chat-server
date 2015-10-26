@@ -7,11 +7,13 @@
     </div>
      <br>
     <form class="login" name = "loginForm">
-    <!-- <p style="color:red;"> {{errorMessage}}</p> -->
-        <input type="text"   placeholder="Enter Username"  ng-model="usertext"><br>
+    <p style="color:red;"> {{errorMessage}}</p>
+        <input type="text"   placeholder="Enter Username"  ng-model="usr.text"><br>
         <input type="button" ng-disabled="loginForm.$invalid" value="submit" ng-click= "submituserName();">
       </br> 
-      </br> 
-      <a class="signup" href""/> Sign Up ? </a>
+    
+      <!-- <a class="signup" href""/> Sign Up ? </a> -->
+      <input class ="validity"  ng-minlength="3" type="button" ng-disabled="loginForm.$invalid"  value="Sign Up"  ng-click= "signupUser();" required />
+      
    </form>
 

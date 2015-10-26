@@ -11,6 +11,11 @@ body{
 	font-size: 12px;
 }
 
+
+.validity.ng-invalid {
+  border: 1px solid red;
+}
+
 .body{
 	position: absolute;
 	top: -20px;
@@ -94,9 +99,7 @@ body{
 			 clear: both;
 			 margin-right: 70px;
 			 float: right;
-			 
-
-
+			
 		}
 
 .login{
@@ -145,16 +148,16 @@ body{
 	opacity: 0.6;
 }
 
-.login input[type=text]:focus{
-	outline: none;
+/*.login input[type=text]:focus{
+	outline: none;*/
 	/*sborder: 1px solid rgba(255,255,255,0.9);*/
-}
+/*}
+*/
 
 
-
-.login input[type=button]:focus{
+/*.login input[type=button]:focus{
 	outline: none;
-}
+}*/
 
 ::-webkit-input-placeholder{
    /*color: rgba(255,255,255,0.6);*/

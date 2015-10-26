@@ -5,33 +5,39 @@
           scope: {},
             templateUrl: 'Template/mlLoginDirective.html',
           
-        controller: ['$scope', '$state' ,'$location' ,'socket', function ($scope , $state ,$location , socket) {
+            controller: ['$scope', '$state' ,'$location' ,'socket', function ($scope , $state ,$location , socket) {
               
+                   
         
 
-            var navigate = function () {
-              $state.go('chat');
-            }
+                   var navigate = function () {
+                      $state.go('chat');
+                   }
 
-             $scope.submituserName = function () {
-                 socket.emit ('new usr' , $scope.usertext);
-                navigate(); 
-                 $scope.usertext = ' ';
-                }
+                   $scope.submituserName = function () {
+                    // console.log("hah");
+                     // socket.emit ('INSERT.USER' , $scope.usr.text);
+                        navigate(); 
+                    }
                          
-                         socket.on('get usr' , function(data){
-                          $scope.users.push(data);
-                          $scope.$digest();
+                       
 
-                         })
-                      
-                        
+
+                    $scope.signupUser = function () {
+                    socket.emit ('INSERT.USER' , $scope.usr.text);
+                           $scope.usr.text = '';
                          
+                         }
 
-									}]
-              }
-         });
-  })();
+                 socket.on('get usr' , function(data){
+               
+                 // $scope.$digest();
+
+                })             
+          }]
+        }
+    });
+})();
                
 
                           
