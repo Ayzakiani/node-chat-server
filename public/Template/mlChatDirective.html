@@ -1,20 +1,23 @@
-<div >
-	<h1 class="textcolor">Chat</h1>
-	
-	 		<div class="chatWrap">
-					<p class="textcolor" ng-repeat ="msg in msgs track by $index" >{{msg}}</p>
-				</div>
-				<div class="chatWrapuser">
-					<!-- <p class="textcolor" > {{usr}} </p> -->
-					<!-- ng-repeat ="usr in users track by $index" -->
-					<p class="textcolor" > ayza {{usr}}</p>
-			</div>
-
-			<div class="clear"> 
-			<form>
-				<input class="textcolor" size="83" type="text"  ng-model="msg.text">
-				<input type="button" class="btn btn-success btn-xs" value="send"  ng-click="sendMsg();">
-			</form>
-			</div> 
-</div>
-	
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div>
+    <h1 class="textcolor">Chat</h1>
+    <div class="chatWrap">
+     <p class="textcolor" ng-repeat ="msg in msgs track by $index" >{{msg}}</p>
+    </div>
+    <div class="chatWrapuser">
+      <p class="textcolor" ng-repeat ="user in users track by $index">{{user.usr}}</p>
+    </div>
+    <div class="clear">
+      <form>
+        <input class="textcolor" size="83" type="text"  ng-model="msg.text">
+        <input type="button" class="btn btn-success btn-xs" value="send"  ng-click="sendMsg();">
+      </form>
+    </div>
+  </div>
+</body>
+</html>

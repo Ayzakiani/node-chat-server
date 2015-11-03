@@ -1,19 +1,24 @@
-
-    <div class="body"></div>
-    <div class="grad"></div>
-    <div class="header">
-    <div>Chat<span>App</span>
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div class="body"></div>
+  <div class="grad"></div>
+  <div class="header">
+    <div>
+      Chat<span>App</span>
     </div>
-    </div>
-     <br>
-    <form class="login" name = "loginForm">
+  </div><br>
+  <form class="login" name = "loginForm">
     <p style="color:red;"> {{errorMessage}}</p>
         <input type="text"   placeholder="Enter Username"  ng-model="usr.text"><br>
         <input type="button" ng-disabled="loginForm.$invalid" value="submit" ng-click= "submituserName();">
       </br> 
-    
       <!-- <a class="signup" href""/> Sign Up ? </a> -->
       <input class ="validity"  ng-minlength="3" type="button" ng-disabled="loginForm.$invalid"  value="Sign Up"  ng-click= "signupUser();" required />
       
    </form>
-
+</body>
+</html>
