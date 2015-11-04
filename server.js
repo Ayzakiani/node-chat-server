@@ -22,12 +22,17 @@ app.use('/schemas', exportschema);
 
 app.use('/export', exportss);
 
- // var Chat = mongoose.model("Message", msgSchema);
+ var Chat = mongoose.model("Message");
 
  var Model = mongoose.model("users");
 
 
 app.use(express.static(__dirname + '/public'));
+app.get(/^(?!\/view$).*$/, function(req, res) {
+  res.redirect('/index.html');
+});
+
+
 io.sockets.on('connection', function(socket) {
     console.log('working');
 
@@ -40,8 +45,8 @@ io.sockets.on('connection', function(socket) {
         Model.count({'usr': data }, function(err, resp, req) {
             if (resp) {
                 console.log('user exists already');
-                var data = 'This User name has already been taken try again!';
-                io.sockets.emit('signup.error', data)
+                var signupError = 'This User name has already been taken try again!';
+                io.sockets.emit('signup.error', signupError)
             } else {
 
                 newUser.save(function(err) {
@@ -58,6 +63,20 @@ io.sockets.on('connection', function(socket) {
         });
 
     })
+    
+    socket.on('signIn' , function(data){
+     Model.count({'usr': data }, function(err, resp, req) {
+         if (resp) {
+            console.log('user exists already');
+            var successMessage = 'ok';
+            io.sockets.emit('signinSuccess', successMessage)
+            } else {
+             var errorMessage = 'Invalid UserName';
+             io.sockets.emit('signinError', errorMessage)
+            }
+        });
+
+    });
 
 
     socket.on('send msg', function(data) {

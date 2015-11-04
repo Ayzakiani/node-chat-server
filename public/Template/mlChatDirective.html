@@ -1,23 +1,64 @@
-<!DOCTYPE html>
-<html>
+
 <head>
-  <title></title>
+ <title>Welcome to  Chat App</title>
 </head>
-<body>
-  <div>
-    <h1 class="textcolor">Chat</h1>
-    <div class="chatWrap">
-     <p class="textcolor" ng-repeat ="msg in msgs track by $index" >{{msg}}</p>
-    </div>
-    <div class="chatWrapuser">
-      <p class="textcolor" ng-repeat ="user in users track by $index">{{user.usr}}</p>
-    </div>
-    <div class="clear">
-      <form>
-        <input class="textcolor" size="83" type="text"  ng-model="msg.text">
-        <input type="button" class="btn btn-success btn-xs" value="send"  ng-click="sendMsg();">
-      </form>
-    </div>
-  </div>
+<body style="font-family:Verdana">
+   <div class="container">
+      <div class="row " style="padding-top:40px;">
+         <h3 class="text-center textcolor">Welcome to  Chat App </h3>
+         <br /><br />
+         <div class="col-md-8">
+            <div class="panel panel-info">
+               <div class="panel-heading" class="textcolor">
+                  MESSAGES
+               </div>
+               <div class="panel-body">
+                  <ul class="media-list">
+                     <li class="media">
+                        <div class="media-body">
+                           <div class="media">
+                              <div class="media-body" >
+                                <p class="textcolor" ng-repeat ="msg in msgs track by $index" >{{msg}}</p>
+                                  <hr />
+                              </div>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+               <div class="panel-footer">
+                  <div class="input-group">
+                     <input type="text" class="form-control" ng-model="msg.text" placeholder="Enter Message" />
+                     <span class="input-group-btn">
+                     <button class="btn btn-info" ng-click="sendMsg();" type="button">SEND</button>
+                     </span>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-4">
+            <div class="panel panel-primary">
+               <div class="panel-heading">
+               USERS
+               </div>
+               <div class="panel-body">
+                  <ul class="media-list">
+                     <li class="media">
+                        <div class="media-body">
+                           <div class="media">
+                              <p class="textcolor" ng-repeat ="user in users track by $index">{{user.usr}}</p>
+                           </div>
+                        </div>
+                     </li>  
+                  </ul>
+               <hr />
+               </div>
+             
+            </div>
+         </div>
+      </div>
+   </div>
 </body>
 </html>
+
+

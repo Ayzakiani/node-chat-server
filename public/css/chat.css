@@ -81,10 +81,13 @@ body {
   background-color: #eee;
   height: 500px;
   width: 570px;
-  float: left;
+  float: right;
+  margin-right: 696px;
   padding: 5px;
 }
-
+.textbar{
+  margin-left:100px;
+}
 .chatWrapuser {
   border: 1px #000 solid;
   line-height: 30px;
