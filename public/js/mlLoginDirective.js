@@ -15,7 +15,9 @@
             socket.emit('signIn', $scope.usr.text);
            }
 
-            socket.on('signinSuccess', function(successMessage) { 
+            socket.on('signinSuccess', function(successMessage) {
+
+              console.log('jim');
               navigate();
             });
 

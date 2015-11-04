@@ -14,11 +14,8 @@
 
 
         $http.get('/export').then(function (response) {
-          console.log(response);
+          console.log('API call');
           $scope.users = response.data;
-       
-
-
         });
 
         $scope.sendMsg = function() {
@@ -28,13 +25,7 @@
         socket.on('get msg', function(data) {
           $scope.msgs.push(data);
           $scope.$digest();
-        })
-
-          // socket.on('users', function(resp) {
-          //   console.log(resp); 
-          //   $scope.users = resp;
-          //   $scope.$apply( $scope.users);
-          //  })
+        });
       }]
     }
   });

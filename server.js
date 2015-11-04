@@ -23,8 +23,9 @@ app.use('/schemas', exportschema);
 app.use('/export', exportss);
 
  var Chat = mongoose.model("Message");
+var Model = exportschema.Model;
+// var Model = mongoose.model("users");
 
- var Model = mongoose.model("users");
 
 
 app.use(express.static(__dirname + '/public'));
@@ -99,4 +100,3 @@ io.sockets.on('connection', function(socket) {
 
 
 });
-
